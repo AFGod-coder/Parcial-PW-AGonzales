@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducaNet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <header>
+        <nav class="navbar">
+            <ul class="navabar-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="programas.html" class="nav-link">Programas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cursos.html" class="nav-link">Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Log in</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="carrusel">
+            <article class="carrusel-container">
+                <div class="carrusel-item">
+                    <img src="/img/imagen1.jpg" alt="Imagen 1">
+                </div>
+                <div class="carrusel-item">
+                    <img src="/img/imagen2.jpg" alt="Imagen 2">
+                </div>
+                <div class="carrusel-item">
+                    <img src="/img/imagen2.jpg" alt="Imagen 3">
+                </div>
+                <div class="carrusel-item">
+                    <img src="/img/imagen1.jpg" alt="Imagen 4">
+                </div>
+                <div class="carrusel-item">
+                    <img src="/img/imagen1.jpg" alt="Imagen 5">
+                </div>
+            </article>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            <div class="carrusel-indicators">
+                <span class="indicator" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+                <span class="indicator" onclick="currentSlide(4)"></span>
+                <span class="indicator" onclick="currentSlide(5)"></span>
+            </div>
+        </section>
+    </header>
+    
+    <article class="article"><p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sit asperiores provident, illo autem recusandae sint nisi dolore possimus aliquam, maiores nobis eligendi voluptatum officiis blanditiis facere laboriosam omnis eaque.</p></article>
+    <article class="article"><p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sit asperiores provident, illo autem recusandae sint nisi dolore possimus aliquam, maiores nobis eligendi voluptatum officiis blanditiis facere laboriosam omnis eaque.</p></article>
+    <article class="article"><p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sit asperiores provident, illo autem recusandae sint nisi dolore possimus aliquam, maiores nobis eligendi voluptatum officiis blanditiis facere laboriosam omnis eaque.</p></article>
+
+    <section class="botones">
+        <button id="cambiarTexto" class="boton">
+            Cambiar Contenido
+        </button>
+        <button id="cambiarColor" class="boton">
+            Cambiar Color de pagina
+        </button>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
