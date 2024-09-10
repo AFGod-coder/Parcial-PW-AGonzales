@@ -16,6 +16,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     gap: 3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
 }
 
 label {
@@ -62,4 +66,10 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.botones{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
 }
