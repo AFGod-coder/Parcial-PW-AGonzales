@@ -25,19 +25,22 @@
         </ul>
     </nav>
     <section class="formulario">
-        <h3>Por favor ingrese sus credenciales para acceder al sistema</h3>    
-        <form action="/login" method="post" id="formulario">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="password">Clave:</label>
-            <input type="password" id="password" name="password" required><br><br>
+        <h3>Por favor ingrese sus credenciales para acceder al sistema</h3>
+        <form id="formulario">
+    
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Usuario123" required>
+            <span class="error" id="errorUsuario"></span>
+    
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder=" Contraseña123" required>
+            <span class="error" id="errorContrasena"></span>
+            <button type="submit">Log in</button>
             <div>
-                <button type="submit">Log in</button>
-                <a href="/signup.html">
-                    <button type="button">Sign up</button>
-                </a>
+                <button>Sign in</button>
                 <button type="button" onclick="window.location.href='/'">Cancelar</button>
             </div>
+    
         </form>
     </section>
 </body>

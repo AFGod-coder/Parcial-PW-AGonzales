@@ -9,74 +9,57 @@
 .formulario {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 0 3rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 500px;
-    height: 600px;
-    gap: 5rem;
-    left: 0;
-    right: 0;
-    margin: auto;
-
-    >h3{
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-    }
-
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    gap: 3rem;
 }
 
-.formulario form {
-    display: flex;
-    flex-direction: column;
-
-    & >div{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-    }
-}
-
-.formulario label {
-    margin-bottom: 5px;
+label {
+    display: block;
+    margin-bottom: 8px;
     font-weight: bold;
+    color: #333;
 }
 
-.formulario input {
-    margin-bottom: 15px;
+input {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 300px;
+    box-sizing: border-box;
+    transition: border-color 0.5s;
 }
 
-.formulario button {
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.error {
+    color: rgb(0, 30, 255);
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+button {
+    width: 100%;
     padding: 10px;
+    background-color: #007BFF;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
     color: white;
+    font-size: 16px;
     cursor: pointer;
-    margin-bottom: 10px;
-    width: 120px;
+    transition: background-color 0.3s;
 }
 
-.formulario button[type="button"] {
-    background-color: #6c757d;
-}
-
-.formulario button:hover {
+button:hover {
     background-color: #0056b3;
-}
-
-.formulario button[type="button"]:hover {
-    background-color: #5a6268;
-}
-
-.formulario a {
-    text-decoration: none;
 }

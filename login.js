@@ -1,41 +1,42 @@
-const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('#formulario input');
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let isValid = true;
 
-const expresiones = {
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
-    password: /^.{4,12}$/,
-};
+    const expresiones = {
+        usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, 
+        password: /^.{4,12}$/,
+        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        telefono: /^\d{7,14}$/
+    };
 
-const validarFormulario = (e) => {
-    switch (e.target.name) {
-        case "username":
-            validarCampo(expresiones.usuario, e.target, 'username');
-            break;
-        case "password":
-            validarCampo(expresiones.password, e.target, 'password');
-            break;
-    }
-};
 
-const validarCampo = (expresion, input, campo) => {
-    if (expresion.test(input.value)) {
-        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
-        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+    const usuario = document.getElementById('usuario').value;
+    if (!expresiones.usuario.test(usuario)) {
+        document.getElementById('errorUsuario').textContent = 'Usuario debe tener entre 4 y 16 caracteres alfanuméricos.';
+        isValid = false;
     } else {
-        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
-        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.getElementById('errorUsuario').textContent = '';
     }
-};
 
-inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-});
+    const nombre = document.getElementById('nombre').value;
+    if (!expresiones.nombre.test(nombre)) {
+        document.getElementById('errorNombre').textContent = 'Nombre debe tener entre 1 y 40 caracteres alfabéticos.';
+        isValid = false;
+    } else {
+        document.getElementById('errorNombre').textContent = '';
+    }
 
-formulario.addEventListener('submit', (e) => {
-    if (!expresiones.usuario.test(formulario.username.value) || !expresiones.password.test(formulario.password.value)) {
-        e.preventDefault();
-        alert('Por favor, rellena los campos correctamente.');
+    const contrasena = document.getElementById('contrasena').value;
+    if (!expresiones.password.test(contrasena)) {
+        document.getElementById('errorContrasena').textContent = 'Contraseña debe tener entre 4 y 12 caracteres.';
+        isValid = false;
+    } else {
+        document.getElementById('errorContrasena').textContent = '';
+    }
+
+    
+    if (isValid) {
+        this.submit();
     }
 });
-
